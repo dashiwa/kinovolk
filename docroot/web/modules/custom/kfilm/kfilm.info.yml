@@ -1,0 +1,5 @@
+name: 'kfilm'
+type: module
+description: 'Film Entity'
+core: 8.x
+package: 'Kinovolk'

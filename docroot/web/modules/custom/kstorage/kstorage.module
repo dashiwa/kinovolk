@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains kstorage.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kstorage_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the kstorage module.
+    case 'help.page.kstorage':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kstorage_theme() {
+  $theme = [];
+  $theme['film_entity'] = [
+    'render element' => 'elements',
+    'file' => 'film_entity.page.inc',
+    'template' => 'film_entity',
+  ];
+  $theme['film_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'film_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function kstorage_theme_suggestions_film_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#film_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'film_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'film_entity__' . $entity->bundle();
+  $suggestions[] = 'film_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'film_entity__' . $entity->id();
+  $suggestions[] = 'film_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

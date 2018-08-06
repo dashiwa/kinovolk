@@ -1,0 +1,18 @@
+
+# Film entity menu items definition
+entity.film_entity.collection:
+  title: 'Film entity list'
+  route_name: entity.film_entity.collection
+  description: 'List Film entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Film entity type menu items definition
+entity.film_entity_type.collection:
+  title: 'Film entity type'
+  route_name: entity.film_entity_type.collection
+  description: 'List Film entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

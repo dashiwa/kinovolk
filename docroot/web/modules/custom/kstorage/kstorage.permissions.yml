@@ -1,0 +1,30 @@
+add film entity entities:
+  title: 'Create new Film entity entities'
+
+administer film entity entities:
+  title: 'Administer Film entity entities'
+  description: 'Allow to access the administration form to configure Film entity entities.'
+  restrict access: true
+
+delete film entity entities:
+  title: 'Delete Film entity entities'
+
+edit film entity entities:
+  title: 'Edit Film entity entities'
+
+view published film entity entities:
+  title: 'View published Film entity entities'
+
+view unpublished film entity entities:
+  title: 'View unpublished Film entity entities'
+
+view all film entity revisions:
+  title: 'View all Film entity revisions'
+
+revert all film entity revisions:
+  title: 'Revert all Film entity revisions'
+  description: 'Role requires permission <em>view Film entity revisions</em> and <em>edit rights</em> for film entity entities in question or <em>administer film entity entities</em>.'
+
+delete all film entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Film entity revisions</em> and <em>delete rights</em> for film entity entities in question or <em>administer film entity entities</em>.'

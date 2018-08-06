@@ -1,0 +1,51 @@
+uuid: 115e3763-42fe-490f-bbd0-9f6c76c9482c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.film_entity.kino_tv_series.field_film_description
+    - field.field.film_entity.kino_tv_series.field_film_image
+    - image.style.thumbnail
+    - kstorage.film_entity_type.kino_tv_series
+  module:
+    - image
+    - text
+id: film_entity.kino_tv_series.default
+targetEntityType: film_entity
+bundle: kino_tv_series
+mode: default
+content:
+  field_film_description:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_film_image:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }
